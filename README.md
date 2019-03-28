@@ -1,4 +1,5 @@
 # LFA-AFN
 Realizator: Duta Teodor Ionut
 
-Colaborator: Silvian Cosmin-Alexandru
+Colaborator: Cosmin-Silvian Alexandru
+
