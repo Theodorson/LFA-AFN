@@ -6,7 +6,7 @@ using namespace std;
 
 ifstream f;
 
-struct AFN_tranzitie
+struct Stari
 {
 int inceput;
 vector <int> inceput_finale;
@@ -15,8 +15,7 @@ vector <char> litera;
 
 
 
-
-void citire_AFN (AFN_tranzitie **A,int &nr_stari,int &nr_tranzitii,int &nr_stari_finale,int &nr_litere,int **finale,char **litere)
+void citire_AFN (Stari **A,int &nr_stari,int &nr_tranzitii,int &nr_stari_finale,int &nr_litere,int **finale,char **litere)
 {
     f.open("date.in.txt");
 
@@ -31,7 +30,7 @@ void citire_AFN (AFN_tranzitie **A,int &nr_stari,int &nr_tranzitii,int &nr_stari
     f>>nr_litere;
     *litere=new char[nr_litere];
 
-    *A=new AFN_tranzitie[nr_stari];
+    *A=new Stari[nr_stari];
 
     int x,y,contor=0;
     char z,aux[nr_litere];
@@ -71,7 +70,7 @@ void citire_AFN (AFN_tranzitie **A,int &nr_stari,int &nr_tranzitii,int &nr_stari
 
 }
 
-void afisare_AFN(AFN_tranzitie *A,int nr_stari,int nr_tranzitii,int nr_stari_finale,int nr_litere,int *finale,char *litere)
+void afisare_AFN(Stari *A,int nr_stari,int nr_tranzitii,int nr_stari_finale,int nr_litere,int *finale,char *litere)
 {
 cout<<"Nr de stari="<<nr_stari<<endl;
 cout<<"Nr de tranzitii="<<nr_tranzitii<<endl;
@@ -103,7 +102,7 @@ cout<<endl;
 }
 
 
-bool verificare_cuvant_AFN(int contor_cuvant,AFN_tranzitie *A,int stare_initiala,int nr_stari_finale,int *finale,char *cuvant)
+bool verificare_cuvant_AFN(int contor_cuvant,Stari *A,int stare_initiala,int nr_stari_finale,int *finale,char *cuvant)
 {   if(cuvant[contor_cuvant]==NULL)
     {
         for(int i=0;i<nr_stari_finale;i++)
@@ -127,8 +126,8 @@ return 0;
 int main()
 {
     int nr_stari,nr_tranzitii,nr_stari_finale,stare_initiala,nr_litere,*finale,k=0;
-    char *litere,*cuvant="acaaac";
-    AFN_tranzitie *A;
+    char *litere,*cuvant="accac";
+    Stari *A;
 
     citire_AFN(&A,nr_stari,nr_tranzitii,nr_stari_finale,nr_litere,&finale,&litere);
     afisare_AFN(A,nr_stari,nr_tranzitii,nr_stari_finale,nr_litere,finale,litere);
